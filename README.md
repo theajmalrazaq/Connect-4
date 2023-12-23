@@ -33,7 +33,7 @@ Connect Four is a two-player connection game in which the players first choose a
 
 ## Game Files
 
-- **ConnectFour.cpp**: The main C++ source code.
+- **main.cpp**: The main C++ source code.
 - **Scores.txt**: File to store game records.
 
 ## Usage
@@ -41,8 +41,8 @@ Connect Four is a two-player connection game in which the players first choose a
 Compile and run the `ConnectFour.cpp` file using a C++ compiler.
 
 ```bash
-g++ ConnectFour.cpp -o ConnectFour
-./ConnectFour
+g++ main.cpp -o main
+./main
 ```
 
 ## Additional Information
