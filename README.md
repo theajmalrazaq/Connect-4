@@ -1,6 +1,5 @@
 Certainly! Here's a basic README.md file for your Connect Four game:
 
-```markdown
 # Connect Four Game
 
 Welcome to the Connect Four game implementation in C++!
@@ -56,10 +55,5 @@ g++ ConnectFour.cpp -o ConnectFour
 Game made by:
 - Usman Dilbar
 - Ajmal Razaq
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
 
 Feel free to customize and expand this README to include more details about the game, how to compile/run it, or any additional features you'd like to highlight.
