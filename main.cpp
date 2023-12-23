@@ -5,8 +5,6 @@
 #include <ctime>
 
 using namespace std;
-
-//row or colum ki height set ki 1+ se q ke array 1 se start krni hai
 const int row = 7, column = 8;
 
 // function declarations
@@ -28,7 +26,7 @@ int main() {
 	char MenuChoice = '0';
 	string playeronename, playertwoname;
 
-	//Menu
+	//Menu 
 	cout << "********************************************\n";
 	cout << "**          Welcome to Connect Four!      **\n";
 	cout << "********************************************\n\n\n";
@@ -44,7 +42,7 @@ int main() {
 		cin.ignore();
 
 
-		//agar input 1 mil gya tu play function call kr ke game start kr do
+		
 		if (MenuChoice == '1') {
 
 
@@ -112,10 +110,8 @@ int main() {
 
 int play(char MenuChoice, int & ScorePlayer1, int & ScorePlayer2, string playeronename, string playertwoname) {
 
-	//iniatlly sab set kr dia taka jab bhi recursive function call kryn to reset ho kr call ho function
 	int playeroneturns = 0, playertwoturns = 0;
 
-	//toss krne or choose krne ke lyie current player 1 ho ga ya 2
 	int toss = rand() % 2;
 	int currentPlayer = (toss == 0) ? 1 : 2;
 	char board[row][column] = {
@@ -125,7 +121,6 @@ int play(char MenuChoice, int & ScorePlayer1, int & ScorePlayer2, string playero
 	char MenuTwoChoice = '0';
 
 
-	//agar menu choice 1 mily main se tu screan clear kr ke score show kry or game board
 	if (MenuChoice == '1') {
 		system("cls");
 		cout << "***********************\n";
@@ -135,9 +130,7 @@ int play(char MenuChoice, int & ScorePlayer1, int & ScorePlayer2, string playero
 		display(board);
 		cout << ((currentPlayer == 1) ? playeronename : playertwoname) << " Won The Toss\n";
 
-		//tab tak yeh krty raho jab tak loop maually break na ho
 		do {
-			//board check krne ke lyie kahi full tu nhi 
 
 			draw(board, full);
 			if (full == 0) {
@@ -179,7 +172,6 @@ int play(char MenuChoice, int & ScorePlayer1, int & ScorePlayer2, string playero
 					}
 				}
 			}
-			//current player dekhna or uski choice lna
 			cout << ((currentPlayer == 1) ? playeronename : playertwoname) << "'s Turns\nEnter row Between 1 and 7 = ";
 			cin >> choice;
 			cout << endl;
@@ -202,7 +194,6 @@ int play(char MenuChoice, int & ScorePlayer1, int & ScorePlayer2, string playero
 				}
 			}
 
-			//current player check krna or us ke number of turns increase krna
 			(currentPlayer == 1) ? playeroneturns++ : playertwoturns++;
 			check_down(board, (currentPlayer == 1) ? Player1 : Player2, choice);
 			full_row(board, (currentPlayer == 1) ? Player1 : Player2, choice, (currentPlayer == 1) ? playeronename : playertwoname);
@@ -216,7 +207,6 @@ int play(char MenuChoice, int & ScorePlayer1, int & ScorePlayer2, string playero
 
 			win = check_win(board, (currentPlayer == 1) ? Player1 : Player2);
 
-			//winner check krne ke lyie
 			if (win == 1) {
 				cout << "\n\n*******************************************************\n\n";
 				cout << " \tCongratulation!!!!!! " << ((currentPlayer == 1) ? playeronename : playertwoname) << " You Won!! In " << ((currentPlayer == 1) ? playeroneturns : playertwoturns) << " turns.\n";
@@ -259,7 +249,6 @@ int play(char MenuChoice, int & ScorePlayer1, int & ScorePlayer2, string playero
 				}
 			}
 
-			//player switch krne ke lyie
 			currentPlayer = (currentPlayer == 1) ? 2 : 1;
 
 		} while (true);
@@ -268,7 +257,6 @@ int play(char MenuChoice, int & ScorePlayer1, int & ScorePlayer2, string playero
 	return 0;
 }
 
-//win condition check krne ke lyie function 
 bool check_win(char board[][column], char a) {
 
 
@@ -280,28 +268,24 @@ bool check_win(char board[][column], char a) {
 			int countdiagonalright = 0;
 
 			for (int k = 0; k < 4; k++) {
-				//digonal left ke lyie
 				if (board[i - k][j - k] == a) {
 					countdiagonalleft++;
 				}
 				else {
 					countdiagonalleft = 0;
 				}
-				//horizontal  ke lyie
 				if (board[i][j - k] == a) {
 					counthorizontal++;
 				}
 				else {
 					counthorizontal = 0;
 				}
-				//vertical  ke lyie
 				if (board[i - k][j] == a) {
 					countvertical++;
 				}
 				else {
 					countvertical = 0;
 				}
-				//digonal right ke lyie
 				if (board[i - k][j + k] == a) {
 					countdiagonalright++;
 				}
@@ -319,7 +303,6 @@ bool check_win(char board[][column], char a) {
 	return false;
 }
 
-//full row  dekhny ke lyie 
 void full_row(char board[][column], char a, int choice, string playername) {
 	int x = 0;
 	while (x != 1) {
@@ -341,7 +324,6 @@ void full_row(char board[][column], char a, int choice, string playername) {
 	}
 }
 
-//user ki choice pr character put krne ke lyie 
 void check_down(char board[][column], char a, int choice) {
 	int x = 6, y = 0;
 	while (y != 1) {
@@ -356,7 +338,6 @@ void check_down(char board[][column], char a, int choice) {
 	}
 }
 
-//board show krne ke lyie function 
 void display(char board[][column]) {
 	cout << "  1  2  3  4  5  6  7  \n";
 	cout << "***********************\n";
@@ -376,7 +357,6 @@ void display(char board[][column]) {
 
 }
 
-//full board check krne ke lyie 
 void draw(char board[][column], int & checkfull) {
 	checkfull = 0;
 	for (int i = 1; i <= row - 1; i++) {
@@ -387,14 +367,12 @@ void draw(char board[][column], int & checkfull) {
 		}
 	}
 }
-//crdits dekhny ke lyie
 void credits_fun() {
 	cout << "\n\t     Credits\n**********************************************\n\n";
 	cout << "\t     Game made by   \n\n\t    1.Usman Dilbar \n\t    2.Ajmal Razaq \n";
 	cout << "\n\n**********************************************\n\n";
 
 }
-//rules dekhny ke lyie
 void rules_fun() {
 	cout << "\n\t     Instruction/Rules\n*****************************************************************************************\n\n\n";
 	cout << "1. Players take turns dropping by selecting one of seven columns into a 6x7 Board. \n\n";
@@ -403,7 +381,6 @@ void rules_fun() {
 	cout << "4. The first to achieve this wins, or it's a draw if the Board is full. \n\n";
 	cout << "\n\n*****************************************************************************************\n\n";
 }
-//record show krne ke lyie
 void record(){
 	ifstream fin;
 	fin.open("Scores.txt");
@@ -413,7 +390,6 @@ void record(){
 		cout << record << endl;
 	}
 }
-//record set krne ke lyie file mn
 void setrecord(string playername, int playerterms)
 {
 	ofstream fout;
