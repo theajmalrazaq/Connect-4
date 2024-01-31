@@ -1,12 +1,10 @@
-Certainly! Here's a basic README.md file for your Connect Four game:
-
 # Connect Four Game
 
 Welcome to the Connect Four game implementation in C++!
 
 ## Introduction
 
-Connect Four is a two-player connection game in which the players  take turns dropping one disc from the top into a seven-column, six-row vertically suspended grid. The pieces fall straight down, occupying the lowest available space within the column. The object of the game is to connect four of one's own discs of the same color vertically, horizontally, or diagonally before your opponent.
+Connect Four is a two-player connection game in which the players  take turns by slecting column occupying the lowest available space within the column. The object of the game is to connect four of one's own symbol vertically, horizontally, or diagonally before your opponent.
 
 ## How to Play
 
@@ -20,8 +18,8 @@ Connect Four is a two-player connection game in which the players  take turns dr
 
 3. If you choose to play:
     - Enter the names for Player 1 and Player 2.
-    - Take turns dropping your discs into the grid.
-    - Connect four discs of your color to win.
+    - Take turns By Selecting Column.
+    - Connect four Symbol To Win
 
 ## Features
 
