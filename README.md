@@ -17,9 +17,10 @@ Connect Four is a two-player connection game in which the players  take turns by
     - Record: View game records.
 
 3. If you choose to play:
-    - Enter the names for Player 1 and Player 2.
-    - Take turns By Selecting Column.
-    - Connect four Symbol To Win
+1. Players take turns dropping by selecting one of seven columns into a 6x7 Board.
+2. The goal is to connect four 'X' or 'O'  in a Board.
+3. Connections can be horizontal, vertical, or diagonal.
+4. The first to achieve this wins, or it's a draw if the Board is full.
 
 ## Features
 
